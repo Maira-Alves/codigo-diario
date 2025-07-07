@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Meu Diário Pessoal</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+</head>
+<body>
+ <header class="cabecalho-jornal">
+  <h1>O Código Diário</h1>
+  <button id="btn-tema" aria-label="Alternar entre modo claro e escuro">🌙 Modo Escuro</button>
+  <div class="subinfo">
+    <span>SEGUNDA-FEIRA</span>
+    <span>07 DE JULHO DE 2025</span>
+    <span>Nº 001</span>
+  </div>
+  <hr>
+</header>
+
+<div class="conteudo-jornal">
+<section class="coluna-jornalista">
+  <img src="foto-jornalista-amira.jpg" alt="Retrato da jornalista Amira ">
+  <h3>Por Amira Selva</h3>
+  <p>Com um olhar atento sobre a evolução da jovem programadora Maira, Amira Selva acompanha, dia após dia, os desafios e conquistas de sua versão do passado.</p>
+  <p>“Escrever sobre ela é como observar uma semente criando coragem para romper a terra.”</p>
+  <footer class="redes-jornalista">
+  <p>Contatos:</p>
+  <ul>
+    <li>🐱<a href="https://github.com/Maira-Alves" target="_blank">GitHub</a></li>
+    <li>💼<a href="https://www.linkedin.com/in/maira-alves-dev" target="_blank">LinkedIn</a></li>
+    <li>✉️<a href="mailto:mairamesquita@outlook.com">Email</a></li>
+  </ul>
+</footer>
+</section>
+
+
+<main class="corpo-jornal">
+  <article class="noticia destaque">
+    <h2>O INÍCIO DA TRAJETÓRIA</h2>
+    <p>Minha caminhada na programação começou cheia de dúvidas, inseguranças e aquele friozinho na barriga, levou um tempo até que pude entender que isso aqui tem a ver comigo.</p>
+    <p>Hoje, cada linha de código é como uma letra nessa história que estou aprendendo a escrever — com paciência, erro, e muita curiosidade.</p>
+  </article>
+
+  <article class="noticia">
+    <h2>MAS AFINAL, COMO TUDO COMEÇOU?</h2>
+    <p>Cresci vendo o meu pai consertar impressoras e essas coisas, me lembro de ficar lendo os manuais e guias de instalação Windows, e sempre ficava curiosa para saber como tudo aquilo funcionava. Pois bem, alguns anos depois me vi em um grande desafio, o meu Tamagotchi havia quebrado. "COMO IREI CUIDAR DO MEU BICHINHO? ISSO NÃO PODE ACONTECER, PRECISO DAR UM JEITO!" e foi ali naquela tarde em que eu consegui, com apenas um palito, uma chave Phillips e desespero eu salvei o meu mascote!</p>
+  </article>
+
+ <article class="noticia">
+    <h2>DA FRUSTRAÇÃO À DESCOBERTA.</h2>
+    <p>Alguns anos depois, me tornei uma adulta super frustrada com a minha área profissional, pois não conseguia atuar na área da minha graduação (RH), comecei a procurar outros cursos para não ficar parada, foi quando conheci diversas instituições incentivadoras na tecnologia e eu resolvi dar uma chance, o meu primeiro contato foi o curso introdutório a programação da <a href="https://minasprogramam.com/" target="_blank">Minas Programam</a>, sim, o meu primeiro "Olá, Mundo!" foi emocionante demais, após isso não parei mais, participei de eventos e cursos da <a href="https://www.programaria.org/" target="_blank">PROGRAMARIA</a>,
+    iniciei na faculdade de ADS, e atualmente estou cursando um novo curso de Desenvolvimento de Software pelo <a href="https://desenvolve.grupoboticario.com.br/" target="_blank">Programa Desenvolve</a>. Bom, sei que essa jornada não está no meio, mas está bem longe do final, estou ansiosa para os novos aprendizados e conquistas que estão por vir.
+    </p>
+  </article>
+
+   <article class="noticia">
+    <h2>TENTANDO LIDAR COM O GITHUB</h2>
+    <p>Na faculdade precisei criar uma apresentação bem simples e básica usando HTML, CSS e JS, foi um ótimo começo, pude aprender muitas coisas, acredito que a parte mais "difícil" tenha sido subir o meu projeto para o GITHUB, ainda bem que no curso de Desenvolvimento de Software puder aprender um pouco sobre ele.</p>
+  </article>
+</main>
+</div>
+<footer class="rodape">
+  <p>&copy; 2025 - O Código Diário. Todos os direitos reservados.</p>
+</footer>
+
+<script>
+  const botaoTema = document.getElementById('btn-tema');
+  const body = document.body;
+
+  if (localStorage.getItem('tema') === 'dark') {
+    body.classList.add('dark-mode');
+    botaoTema.textContent = '☀️ Modo Claro';
+  }
+
+  botaoTema.addEventListener('click', () => {
+    body.classList.toggle('dark-mode');
+
+    const modoEscuroAtivo = body.classList.contains('dark-mode');
+    botaoTema.textContent = modoEscuroAtivo ? '☀️ Modo Claro' : '🌙 Modo Escuro';
+
+    localStorage.setItem('tema', modoEscuroAtivo ? 'dark' : 'light');
+  });
+</script>
+</body>
+</html>
